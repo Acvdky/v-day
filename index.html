@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f6f5e1;
+            font-family: 'Press Start 2P', cursive;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Envelope and message styles */
+        .envelope-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .envelope-container img {
+            width: 350px;
+        }
+
+        .message {
+            font-size: 32px; /* Larger font size */
+            color: #e97a80;
+            margin: 20px 0;
+            text-shadow: 2px 2px 5px rgba(253, 176, 192, 0.5);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 28px; /* Larger font size */
+            font-weight: bold; /* Make the text bolder */
+            color: #F4F5F0;
+            background-color: #ffb8bf;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            background-color: #ff9db8;
+            box-shadow: 0 0 15px rgba(255, 158, 161, 0.7); /* Add a soft glow */
+        }
+
+        #noButton {
+            position: absolute;  /* Make the button absolutely positioned */
+            transition: transform 0.3s ease-out;
+        }
+
+        /* Large heart at the bottom */
+        .heart-container {
+            position: absolute;
+            bottom: 10px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .heart-container img {
+            width: 150px;
+        }
+
+        /* Floating hearts */
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 30px;
+            animation: float 5s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0.8);
+            }
+            100% {
+                transform: translateY(-10px) scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+        <img src="images/small-heart.png" class="heart" style="left: 10%; animation-delay: 0s;">
+        <img src="images/small-heart.png" class="heart" style="left: 20%; animation-delay: 1s;">
+        <img src="images/small-heart.png" class="heart" style="left: 30%; animation-delay: 2s;">
+        <img src="images/small-heart.png" class="heart" style="left: 40%; animation-delay: 0.5s;">
+        <img src="images/small-heart.png" class="heart" style="left: 50%; animation-delay: 3s;">
+        <img src="images/small-heart.png" class="heart" style="left: 60%; animation-delay: 1.5s;">
+        <img src="images/small-heart.png" class="heart" style="left: 70%; animation-delay: 4s;">
+        <img src="images/small-heart.png" class="heart" style="left: 80%; animation-delay: 2.5s;">
+        <img src="images/small-heart.png" class="heart" style="left: 90%; animation-delay: 3.5s;">
+    </div>
+
+    <!-- Envelope and Message -->
+    <div class="envelope-container">
+        <img src="images/envelope.png" alt="Pixel Envelope">
+        <div class="message">Will You Be My Valentine?</div>
+        <div class="buttons">
+            <button id="yesButton">YES</button>
+            <button id="noButton">NO</button>
+        </div>
+    </div>
+
+    <!-- Large Heart at Bottom -->
+    <div class="heart-container">
+        <img src="images/large-heart.png" alt="Large Pixel Heart">
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+        const yesButton = document.getElementById('yesButton');
+
+        // "No" Button Hover Effect with smooth movement within the screen
+        noButton.addEventListener('mouseenter', () => {
+            // Get the button's width and height
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
+
+            // Calculate random x and y positions within the screen, ensuring the button stays inside
+            const x = Math.random() * (window.innerWidth - buttonWidth);
+            const y = Math.random() * (window.innerHeight - buttonHeight);
+
+            // Apply the calculated position to the button
+            noButton.style.left = `${x}px`; // Use absolute positioning
+            noButton.style.top = `${y}px`;  // Use absolute positioning
+        });
+
+        // "Yes" Button Click Action
+        yesButton.addEventListener('click', () => {
+            window.location.href = 'valentine.html';
+        });
+    </script>
+</body>
+</html>

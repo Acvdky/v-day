@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffeef5;
+            font-family: 'Arial', sans-serif;
+            color: #E97A80;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            justify-content: space-between; /* Side by side content */
+        }
+
+        /* Main content container */
+        .content {
+            display: flex;
+            width: 100%;
+            height: 100%; /* Take up full height */
+            justify-content: space-between;
+            align-items: center; /* Vertically center the content */
+            padding: 0 5%; /* Add padding to the left and right */
+        }
+
+        /* Voucher styles (on the left) */
+        .voucher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            max-width: 500px; /* Limit size of the voucher */
+        }
+
+        .voucher img {
+            width: 100%; /* Make voucher take up available space */
+        }
+
+        /* Message styles (on the right) */
+        .message {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px; /* Larger font size */
+            padding: 40px;
+            text-align: justify;
+            max-width: 600px; /* Restrict width for readability */
+            line-height: 1.6; /* Improve line spacing */
+            color: #5e2a25; /* Darker color for better contrast */
+            margin-left: 20px; /* Space between the text and the voucher */
+            flex: 1; /* Allow it to take up the remaining space */
+        }
+
+        /* Floating stars */
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 50px;  /* Star size */
+            height: 50px;
+            background-image: url('images/star.png'); /* Ensure path is correct */
+            background-size: cover;
+            opacity: 0.8;
+            border-radius: 50%;
+            animation: floatStars 12s ease-in-out infinite, sparkle 5s ease-in-out infinite;
+        }
+
+        /* Floating star effect */
+        @keyframes floatStars {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            25% {
+                transform: translateX(50vw) translateY(20vh);
+            }
+            50% {
+                transform: translateX(100vw) translateY(40vh);
+            }
+            75% {
+                transform: translateX(80vw) translateY(60vh);
+            }
+            100% {
+                transform: translateX(0) translateY(80vh);
+            }
+        }
+
+        /* Sparkling effect */
+        @keyframes sparkle {
+            0% {
+                opacity: 0.5;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars">
+        <!-- More stars with different positions and delays -->
+        <div class="star" style="left: 5%; top: 10%; animation-delay: 0s;"></div>
+        <div class="star" style="left: 15%; top: 25%; animation-delay: 1s;"></div>
+        <div class="star" style="left: 25%; top: 40%; animation-delay: 2s;"></div>
+        <div class="star" style="left: 35%; top: 50%; animation-delay: 0.5s;"></div>
+        <div class="star" style="left: 45%; top: 60%; animation-delay: 3s;"></div>
+        <div class="star" style="left: 55%; top: 70%; animation-delay: 1.5s;"></div>
+        <div class="star" style="left: 65%; top: 80%; animation-delay: 4s;"></div>
+        <div class="star" style="left: 75%; top: 90%; animation-delay: 2.5s;"></div>
+        <div class="star" style="left: 85%; top: 30%; animation-delay: 3.5s;"></div>
+        <div class="star" style="left: 95%; top: 20%; animation-delay: 4.5s;"></div>
+        <!-- Add more stars for better effect -->
+        <div class="star" style="left: 12%; top: 12%; animation-delay: 1.1s;"></div>
+        <div class="star" style="left: 30%; top: 70%; animation-delay: 2.3s;"></div>
+        <div class="star" style="left: 50%; top: 50%; animation-delay: 3.8s;"></div>
+        <div class="star" style="left: 70%; top: 15%; animation-delay: 2.9s;"></div>
+        <div class="star" style="left: 80%; top: 60%; animation-delay: 3.2s;"></div>
+    </div>
+
+    <div class="content">
+        <div class="voucher">
+            <img src="images/voucher.png" alt="Valentine's Voucher">
+        </div>
+
+        <div class="message">
+            <p>Hey gorgeous, looks like you couldn’t outrun fate- here I am, asking to be your Valentine this year and every year to come. You’re mine to the stars and the moon- before, now, and always. You’re deeply etched in my hands and heart, and there’s no letting go.</p>
+            <p>Don’t forget to claim your Valentine’s voucher: one free lifetime of love, kisses, and endless cuddles (redeemable anytime, anywhere). Just so you know- you’re the best thing that’s ever happened to me, and I can’t wait to keep falling for you every single day. Say yes, and let's make this Valentine’s Day unforgettable, my love.</p>
+        </div>
+    </div>
+</body>
+</html>
